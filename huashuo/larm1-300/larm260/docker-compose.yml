@@ -1,0 +1,11 @@
+services:
+  verifier:
+    image: leungsino/cysic-verifier:latest
+    environment:
+      - EVM_ADDR="0xa2e4aCB231e9cd5766cc0fBCeb2F4C2cd1E8B302"
+    volumes:
+      - ./data/data:/app/data
+      - ./data/cysic/:/root/.cysic/
+      - ./data/scroll_prover:/root/.scroll_prover
+    network_mode: "host"
+    restart: unless-stopped
